@@ -1,0 +1,19 @@
+{
+  "name": "justreport",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd server && vitest run && cd ../client && vitest run",
+    "test:e2e": "playwright test",
+    "test:server": "cd server && vitest run",
+    "test:client": "cd client && vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}

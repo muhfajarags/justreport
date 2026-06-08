@@ -1,0 +1,17 @@
+[
+  {"id":"1","date":"2026-01-05","product":"Product A","category":"Electronics","quantity":12,"price":250000,"total":3000000,"region":"Jakarta","status":"Completed"},
+  {"id":"2","date":"2026-01-07","product":"Product B","category":"Office","quantity":8,"price":150000,"total":1200000,"region":"Bandung","status":"Completed"},
+  {"id":"3","date":"2026-01-10","product":"Product C","category":"Electronics","quantity":25,"price":80000,"total":2000000,"region":"Surabaya","status":"Completed"},
+  {"id":"4","date":"2026-01-12","product":"Product A","category":"Electronics","quantity":6,"price":250000,"total":1500000,"region":"Jakarta","status":"Pending"},
+  {"id":"5","date":"2026-01-15","product":"Product D","category":"Furniture","quantity":3,"price":1200000,"total":3600000,"region":"Medan","status":"Completed"},
+  {"id":"6","date":"2026-01-18","product":"Product B","category":"Office","quantity":15,"price":150000,"total":2250000,"region":"Bandung","status":"Completed"},
+  {"id":"7","date":"2026-01-20","product":"Product E","category":"Kitchen","quantity":10,"price":350000,"total":3500000,"region":"Surabaya","status":"Pending"},
+  {"id":"8","date":"2026-01-22","product":"Product C","category":"Electronics","quantity":20,"price":80000,"total":1600000,"region":"Jakarta","status":"Completed"},
+  {"id":"9","date":"2026-01-25","product":"Product F","category":"Clothing","quantity":30,"price":50000,"total":1500000,"region":"Bandung","status":"Cancelled"},
+  {"id":"10","date":"2026-01-28","product":"Product A","category":"Electronics","quantity":9,"price":250000,"total":2250000,"region":"Medan","status":"Completed"},
+  {"id":"11","date":"2026-02-02","product":"Product D","category":"Furniture","quantity":4,"price":1200000,"total":4800000,"region":"Jakarta","status":"Completed"},
+  {"id":"12","date":"2026-02-05","product":"Product G","category":"Sports","quantity":18,"price":200000,"total":3600000,"region":"Surabaya","status":"Completed"},
+  {"id":"13","date":"2026-02-08","product":"Product B","category":"Office","quantity":12,"price":150000,"total":1800000,"region":"Medan","status":"Pending"},
+  {"id":"14","date":"2026-02-10","product":"Product E","category":"Kitchen","quantity":7,"price":350000,"total":2450000,"region":"Bandung","status":"Completed"},
+  {"id":"15","date":"2026-02-12","product":"Product H","category":"Electronics","quantity":5,"price":950000,"total":4750000,"region":"Jakarta","status":"Completed"}
+]

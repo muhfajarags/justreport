@@ -1,0 +1,16 @@
+id	date	product	category	quantity	price	total	region	status
+1	2026-01-05	Product A	Electronics	12	250000	3000000	Jakarta	Completed
+2	2026-01-07	Product B	Office	8	150000	1200000	Bandung	Completed
+3	2026-01-10	Product C	Electronics	25	80000	2000000	Surabaya	Completed
+4	2026-01-12	Product A	Electronics	6	250000	1500000	Jakarta	Pending
+5	2026-01-15	Product D	Furniture	3	1200000	3600000	Medan	Completed
+6	2026-01-18	Product B	Office	15	150000	2250000	Bandung	Completed
+7	2026-01-20	Product E	Kitchen	10	350000	3500000	Surabaya	Pending
+8	2026-01-22	Product C	Electronics	20	80000	1600000	Jakarta	Completed
+9	2026-01-25	Product F	Clothing	30	50000	1500000	Bandung	Cancelled
+10	2026-01-28	Product A	Electronics	9	250000	2250000	Medan	Completed
+11	2026-02-02	Product D	Furniture	4	1200000	4800000	Jakarta	Completed
+12	2026-02-05	Product G	Sports	18	200000	3600000	Surabaya	Completed
+13	2026-02-08	Product B	Office	12	150000	1800000	Medan	Pending
+14	2026-02-10	Product E	Kitchen	7	350000	2450000	Bandung	Completed
+15	2026-02-12	Product H	Electronics	5	950000	4750000	Jakarta	Completed
