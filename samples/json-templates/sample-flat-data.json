@@ -1,0 +1,8 @@
+[
+  { "Product": "Laptop Pro X1", "Category": "Electronics", "Sales": 5000000, "Orders": 50, "Growth": "12%" },
+  { "Product": "Summer Collection", "Category": "Fashion", "Sales": 3500000, "Orders": 300, "Growth": "25%" },
+  { "Product": "Organic Seeds Pack", "Category": "Garden", "Sales": 1500000, "Orders": 500, "Growth": "8%" },
+  { "Product": "Running Shoes V2", "Category": "Sports", "Sales": 2800000, "Orders": 200, "Growth": "18%" },
+  { "Product": "Bestseller Novel", "Category": "Books", "Sales": 750000, "Orders": 1000, "Growth": "5%" },
+  { "Product": "Smart Watch S3", "Category": "Electronics", "Sales": 3200000, "Orders": 160, "Growth": "30%" }
+]

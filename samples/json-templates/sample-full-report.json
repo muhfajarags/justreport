@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "title": "Quarterly Performance Report",
+    "subtitle": "Q3 2026 - All Departments",
+    "generatedDate": "8 Juni 2026",
+    "reportDate": "Q3 2026",
+    "author": "Business Intelligence Team",
+    "version": "2.0"
+  },
+  "content": {
+    "summary": "Overall performance improved by 22% compared to Q2 2026. Three out of five departments exceeded their quarterly targets.",
+    "introduction": "This quarterly report covers performance metrics, revenue breakdowns, and departmental analysis for Q3 2026.",
+    "conclusion": "Based on current trends, we project Q4 2026 to show continued growth, particularly in the Engineering and Sales departments.",
+    "notes": "All figures are in Indonesian Rupiah (IDR). Data sourced from the internal ERP system."
+  },
+  "metrics": [
+    { "label": "Total Revenue", "value": "Rp 4.5M", "trend": "+22%", "change": 22 },
+    { "label": "Active Clients", "value": "1,250", "trend": "+15%", "change": 15 },
+    { "label": "Avg Deal Size", "value": "Rp 3,600", "trend": "+6%", "change": 6 },
+    { "label": "Satisfaction", "value": "92%", "trend": "+3%", "change": 3 }
+  ],
+  "charts": [
+    {
+      "type": "bar",
+      "title": "Revenue by Department",
+      "data": [
+        { "label": "Engineering", "value": 1500000 },
+        { "label": "Sales", "value": 1200000 },
+        { "label": "Marketing", "value": 800000 },
+        { "label": "Support", "value": 600000 },
+        { "label": "HR", "value": 400000 }
+      ]
+    },
+    {
+      "type": "line",
+      "title": "Monthly Revenue Trend",
+      "data": [
+        { "label": "Jan", "value": 800000 },
+        { "label": "Feb", "value": 950000 },
+        { "label": "Mar", "value": 1100000 },
+        { "label": "Apr", "value": 1250000 },
+        { "label": "May", "value": 1400000 },
+        { "label": "Jun", "value": 1500000 }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "title": "Department Performance Summary",
+      "headers": ["Department", "Revenue", "Target", "Achievement", "Status"],
+      "rows": [
+        ["Engineering", "Rp 1,500,000", "Rp 1,200,000", "125%", "Exceeded"],
+        ["Sales", "Rp 1,200,000", "Rp 1,100,000", "109%", "Exceeded"],
+        ["Marketing", "Rp 800,000", "Rp 900,000", "89%", "Below Target"],
+        ["Support", "Rp 600,000", "Rp 500,000", "120%", "Exceeded"],
+        ["HR", "Rp 400,000", "Rp 400,000", "100%", "On Target"]
+      ]
+    },
+    {
+      "title": "Top 10 Clients by Revenue",
+      "headers": ["Rank", "Client Name", "Industry", "Revenue", "Growth"],
+      "rows": [
+        ["1", "PT Maju Jaya", "Manufacturing", "Rp 450,000", "+18%"],
+        ["2", "CV Teknologi Nusantara", "Technology", "Rp 380,000", "+25%"],
+        ["3", "PT Global Services", "Finance", "Rp 320,000", "+12%"],
+        ["4", "UD Sumber Makmur", "Agriculture", "Rp 280,000", "+30%"],
+        ["5", "PT Karya Digital", "Technology", "Rp 250,000", "+8%"],
+        ["6", "CV Bangun Sejahtera", "Construction", "Rp 220,000", "+15%"],
+        ["7", "PT Sentosa Abadi", "Retail", "Rp 190,000", "-5%"],
+        ["8", "UD Permata Hati", "Healthcare", "Rp 170,000", "+20%"],
+        ["9", "PT Indo Perkasa", "Logistics", "Rp 150,000", "+10%"],
+        ["10", "CV Harmoni Group", "Education", "Rp 130,000", "+22%"]
+      ]
+    }
+  ],
+  "data": [],
+  "headers": [],
+  "rows": [],
+  "items": []
+}
