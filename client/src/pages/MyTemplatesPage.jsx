@@ -35,35 +35,41 @@ export default function MyTemplatesPage() {
     e.target.value = '';
   }, [uploadTemplate]);
 
+  const totalCount = defaultTemplates.length + customTemplates.length;
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      <div className="flex items-center justify-between mb-6">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-lg font-bold text-gray-900">My Templates</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            {defaultTemplates.length + customTemplates.length} template{defaultTemplates.length + customTemplates.length !== 1 ? 's' : ''}
-          </p>
+          <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">My <span className="gradient-text">Templates</span></h1>
+          <p className="text-sm text-gray-400 mt-1">{totalCount} template{totalCount !== 1 ? 's' : ''}</p>
         </div>
-        <div className="flex items-center space-x-2">
-          <label className="text-xs px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 cursor-pointer transition-colors">
-            Upload HTML
-            <input type="file" accept=".html,.htm" className="hidden" onChange={handleFileUpload} />
-          </label>
-        </div>
+        <label className="btn-primary cursor-pointer">
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+          </svg>
+          Upload HTML
+          <input type="file" accept=".html,.htm" className="hidden" onChange={handleFileUpload} />
+        </label>
       </div>
 
       {loading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[...Array(6)].map((_, i) => (
-            <div key={i} className="h-28 bg-gray-100 rounded-xl animate-pulse" />
+            <div key={i} className="h-32 glass-card animate-pulse" />
           ))}
         </div>
       ) : (
-        <>
+        <div className="space-y-8">
           {defaultTemplates.length > 0 && (
-            <div className="mb-6">
-              <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Default Templates</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+                <h2 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Built-in Templates</h2>
+                <span className="badge-default">{defaultTemplates.length}</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {defaultTemplates.map((tpl) => (
                   <TemplateCard key={tpl.id} template={tpl} />
                 ))}
@@ -72,9 +78,13 @@ export default function MyTemplatesPage() {
           )}
 
           {customTemplates.length > 0 && (
-            <div className="mb-6">
-              <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Custom Templates</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <h2 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Custom Templates</h2>
+                <span className="badge-warning">{customTemplates.length}</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {customTemplates.map((tpl) => (
                   <TemplateCard
                     key={tpl.id}
@@ -86,17 +96,34 @@ export default function MyTemplatesPage() {
             </div>
           )}
 
-          {defaultTemplates.length === 0 && customTemplates.length === 0 && (
-            <div className="text-center py-16">
-              <p className="text-gray-400 text-sm">No templates available.</p>
+          {totalCount === 0 && (
+            <div className="text-center py-24">
+              <div className="w-16 h-16 mx-auto rounded-2xl bg-gray-100 flex items-center justify-center mb-4">
+                <svg className="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5z" />
+                </svg>
+              </div>
+              <h3 className="text-sm font-semibold text-gray-400 mb-1">No templates</h3>
+              <p className="text-xs text-gray-300">Upload an HTML file to create a custom template</p>
             </div>
           )}
-        </>
+        </div>
       )}
 
       {toast && (
-        <div className={`fixed bottom-4 right-4 px-4 py-3 rounded-xl text-sm font-medium shadow-lg z-[60] transition-all
-          ${toast.type === 'error' ? 'bg-red-600 text-white' : 'bg-green-600 text-white'}`}>
+        <div className={`fixed bottom-6 right-6 px-5 py-3 rounded-2xl text-sm font-semibold shadow-2xl z-[60] fade-in flex items-center gap-2.5
+          ${toast.type === 'error'
+            ? 'bg-gradient-to-r from-red-600 to-rose-600 text-white'
+            : 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'}`}>
+          {toast.type === 'error' ? (
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          ) : (
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
+          )}
           {toast.message}
         </div>
       )}
