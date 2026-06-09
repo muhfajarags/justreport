@@ -51,4 +51,8 @@ temp/
 docker-volumes/
 
 # updates
-update-request-v0.0 copy.md
+roadmap.md
+target.md
+
+# Runtime uploads (generated files)
+server/storage/uploads/
