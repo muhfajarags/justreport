@@ -7,40 +7,63 @@ const { PREVIEW_ROW_LIMIT } = require('../config/constants');
 class FileParser {
   async parseFile(filePath, mimeType) {
     const format = this.detectFormat(filePath, mimeType);
-    let data;
+    let rawData;
 
     switch (format) {
       case 'json':
-        data = this.parseJSON(filePath);
+        rawData = this.parseJSON(filePath);
         break;
       case 'csv':
       case 'tsv':
-        data = this.parseCSV(filePath);
+        rawData = this.parseCSV(filePath);
         break;
       case 'xlsx':
       case 'xls':
-        data = this.parseExcel(filePath);
+        rawData = this.parseExcel(filePath);
         break;
       default:
         throw new Error(`Unsupported file format: ${mimeType}`);
     }
 
-    if (!Array.isArray(data)) {
-      data = [data];
-    }
+    // Convert all data to standardized JSON format
+    const jsonData = this.convertToJSON(rawData, format);
 
-    data = this.normalizeData(data);
-
-    if (data.length === 0) {
+    if (!jsonData.data || jsonData.data.length === 0) {
       throw new Error('File contains no data rows');
     }
 
     return {
-      rows: data,
-      rowCount: data.length,
-      columns: Object.keys(data[0]),
-      columnCount: Object.keys(data[0]).length,
-      preview: data.slice(0, PREVIEW_ROW_LIMIT)
+      ...jsonData,
+      preview: jsonData.data.slice(0, PREVIEW_ROW_LIMIT)
+    };
+  }
+
+  convertToJSON(rawData, sourceFormat) {
+    // Ensure data is always an array
+    let dataArray = Array.isArray(rawData) ? rawData : [rawData];
+
+    // Normalize data to ensure consistent JSON structure
+    dataArray = this.normalizeData(dataArray);
+
+    // Extract metadata
+    const headers = Object.keys(dataArray[0] || {});
+    const columns = headers;
+
+    // Build standardized JSON structure
+    return {
+      metadata: {
+        sourceFormat,
+        generatedAt: new Date().toISOString(),
+        totalRows: dataArray.length,
+        totalColumns: columns.length,
+        columns: columns
+      },
+      data: dataArray,
+      // Legacy compatibility
+      rows: dataArray,
+      rowCount: dataArray.length,
+      columns: columns,
+      columnCount: columns.length
     };
   }
 

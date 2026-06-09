@@ -7,7 +7,7 @@ import MyTemplatesPage from './pages/MyTemplatesPage';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen animated-bg">
         <Navigation />
         <main>
           <Routes>

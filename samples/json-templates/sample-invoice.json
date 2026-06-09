@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "title": "INVOICE",
+    "subtitle": "",
+    "generatedDate": "8 Juni 2026",
+    "reportDate": "8 Juni 2026",
+    "author": "PT JustReport Indonesia",
+    "version": "1.0"
+  },
+  "content": {
+    "summary": "",
+    "introduction": "",
+    "conclusion": "",
+    "notes": "Payment due within 30 days. Late payments subject to 2% monthly interest."
+  },
+  "metrics": [],
+  "charts": [],
+  "tables": [],
+  "data": [],
+  "headers": [],
+  "rows": [],
+  "items": [],
+  "invoiceNumber": "INV-2026-0042",
+  "invoiceDate": "8 Juni 2026",
+  "total": 2575000,
+  "items": [
+    { "name": "Custom Report Development", "qty": 1, "price": 1500000, "amount": 1500000 },
+    { "name": "API Integration Service", "qty": 2, "price": 500000, "amount": 1000000 },
+    { "name": "Monthly Support Package", "qty": 1, "price": 75000, "amount": 75000 }
+  ]
+}

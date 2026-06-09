@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "title": "Sales Performance Report",
+    "subtitle": "Q2 2024 Analysis",
+    "author": "Sales Team",
+    "version": "2.1"
+  },
+  "content": {
+    "summary": "This report provides a comprehensive analysis of sales performance across different product categories and regions for Q2 2024. The data shows strong growth in digital products while traditional merchandise experienced a slight decline.",
+    "introduction": "Welcome to the Q2 2024 Sales Performance Report. This analysis covers sales data from April to June 2024, examining trends across various product categories and geographical regions.",
+    "conclusion": "The Q2 results indicate a positive trajectory for the company, with digital products leading the growth. Continued investment in digital channels and strategic regional focus will be key to maintaining this momentum.",
+    "notes": "All figures are in USD. Data was collected from June 1-30, 2024."
+  },
+  "metrics": [
+    {
+      "label": "Total Revenue",
+      "value": "$2,847,500",
+      "trend": "+12.5%",
+      "change": 12.5
+    },
+    {
+      "label": "Units Sold",
+      "value": "45,320",
+      "trend": "+8.3%",
+      "change": 8.3
+    },
+    {
+      "label": "Average Order Value",
+      "value": "$62.87",
+      "trend": "+3.9%",
+      "change": 3.9
+    },
+    {
+      "label": "Customer Satisfaction",
+      "value": "94.2%",
+      "trend": "+1.7%",
+      "change": 1.7
+    }
+  ],
+  "charts": [
+    {
+      "type": "pie",
+      "title": "Revenue by Product Category",
+      "data": [
+        {
+          "label": "Digital Products",
+          "value": 1245800,
+          "color": "#3b82f6"
+        },
+        {
+          "label": "Electronics",
+          "value": 856200,
+          "color": "#10b981"
+        },
+        {
+          "label": "Clothing",
+          "value": 458500,
+          "color": "#f59e0b"
+        },
+        {
+          "label": "Home & Garden",
+          "value": 287000,
+          "color": "#ef4444"
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "title": "Monthly Sales Breakdown",
+      "headers": ["Month", "Revenue", "Units Sold", "Growth Rate", "Top Product"],
+      "rows": [
+        ["April 2024", "$892,300", "14,280", "+9.2%", "Digital Pro License"],
+        ["May 2024", "$948,700", "15,650", "+11.8%", "Wireless Headphones"],
+        ["June 2024", "$1,006,500", "15,390", "+16.4%", "Premium Software Suite"]
+      ]
+    },
+    {
+      "title": "Regional Performance",
+      "headers": ["Region", "Revenue", "Market Share", "YoY Growth", "Key Metrics"],
+      "rows": [
+        ["North America", "$1,245,800", "43.7%", "+15.2%", "High customer retention"],
+        ["Europe", "$856,200", "30.1%", "+10.8%", "Strong digital adoption"],
+        ["Asia Pacific", "$458,500", "16.1%", "+18.5%", "Mobile-first market"],
+        ["Other Regions", "$287,000", "10.1%", "+5.3%", "Emerging potential"]
+      ]
+    }
+  ]
+}

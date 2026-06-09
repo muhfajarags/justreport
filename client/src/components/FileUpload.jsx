@@ -19,10 +19,19 @@ export default function FileUpload({ onUpload }) {
   }, [onUpload]);
 
   return (
-    <div>
+    <div className="section">
+      <div className="section-title mb-4">
+        <svg className="w-4 h-4 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+        </svg>
+        Upload Data
+      </div>
+
       <div
-        className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all cursor-pointer
-          ${dragOver ? 'border-blue-400 bg-blue-50' : 'border-gray-300 hover:border-gray-400 bg-white'}
+        className={`relative border-2 border-dashed rounded-2xl p-10 text-center transition-all duration-300 cursor-pointer group
+          ${dragOver
+            ? 'border-violet-400 bg-violet-50/50 scale-[1.01]'
+            : 'border-gray-200 hover:border-violet-300 hover:bg-violet-50/20'}
           ${uploading ? 'opacity-50 pointer-events-none' : ''}`}
         onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
         onDragLeave={() => setDragOver(false)}
@@ -38,28 +47,42 @@ export default function FileUpload({ onUpload }) {
         />
 
         {uploading ? (
-          <div className="space-y-3">
-            <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto" />
-            <p className="text-sm text-gray-500">Uploading and parsing...</p>
+          <div className="space-y-4">
+            <div className="relative w-12 h-12 mx-auto">
+              <div className="absolute inset-0 rounded-full border-2 border-violet-200"></div>
+              <div className="absolute inset-0 rounded-full border-2 border-violet-500 border-t-transparent animate-spin"></div>
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-gray-700">Parsing your data...</p>
+              <p className="text-xs text-gray-400 mt-1">This won't take long</p>
+            </div>
           </div>
         ) : (
-          <div className="space-y-2">
-            <div className="w-12 h-12 mx-auto text-gray-400">
-              <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="space-y-4">
+            <div className={`w-14 h-14 mx-auto rounded-2xl flex items-center justify-center transition-all duration-300
+              ${dragOver ? 'bg-violet-100 scale-110' : 'bg-gradient-to-br from-violet-50 to-indigo-50 group-hover:scale-105'}`}>
+              <svg className={`w-7 h-7 transition-colors ${dragOver ? 'text-violet-600' : 'text-violet-400 group-hover:text-violet-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                  d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
-            <p className="text-sm font-medium text-gray-700">
-              Drop your file here or <span className="text-blue-600">browse</span>
-            </p>
-            <p className="text-xs text-gray-400">JSON, CSV, TSV, XLSX, XLS — up to 10MB</p>
+            <div>
+              <p className="text-sm font-semibold text-gray-700">
+                {dragOver ? 'Drop your file here' : <>Drag & drop or <span className="text-violet-600">browse</span></>}
+              </p>
+              <p className="text-xs text-gray-400 mt-1">Supports JSON, CSV, TSV, XLSX, XLS</p>
+            </div>
           </div>
         )}
       </div>
 
       {error && (
-        <p className="mt-2 text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg">{error}</p>
+        <div className="mt-3 flex items-center gap-2 text-sm text-red-600 bg-red-50 px-4 py-3 rounded-xl border border-red-100 fade-in">
+          <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {error}
+        </div>
       )}
     </div>
   );

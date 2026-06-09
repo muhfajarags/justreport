@@ -21,7 +21,10 @@ router.post('/', uploadMiddleware.single('file'), async (req, res, next) => {
         columns: result.columnCount,
         columnNames: result.columns,
         preview: result.preview,
-        allData: result.rows
+        // Return standardized JSON structure
+        allData: result.data,
+        // Include metadata for understanding the JSON structure
+        metadata: result.metadata
       }
     });
   } catch (err) {

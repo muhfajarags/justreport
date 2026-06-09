@@ -17,6 +17,9 @@ router.post('/', async (req, res, next) => {
     if (!template_id) throw new AppError('template_id is required', 400);
     if (!data) throw new AppError('data is required', 400);
 
+    // STEP 1: All input is converted to JSON first
+    const jsonData = templateEngine.convertToStandardJSON(data);
+
     const db = await getDb();
 
     const tplResult = db.exec('SELECT id, html_content, name, is_default FROM templates WHERE id = ?', [template_id]);
@@ -47,7 +50,13 @@ router.post('/', async (req, res, next) => {
       }
     }
 
+    // STEP 2: Map JSON tags to template placeholders
+    // This is now handled internally by renderTemplate, which:
+    // 1. Converts data to standard JSON
+    // 2. Maps JSON to template context
+    // 3. Renders with Handlebars
     const html = await templateEngine.renderTemplate(htmlContent, data);
+
     const pdfBuffer = await pdfGenerator.htmlToPdf(html);
 
     const reportId = 'rpt-' + uuidv4().slice(0, 8);
@@ -57,7 +66,7 @@ router.post('/', async (req, res, next) => {
     fs.writeFileSync(pdfPath, pdfBuffer);
 
     const fileSizeKb = Math.round(pdfBuffer.length / 1024);
-    const rowCount = Array.isArray(data) ? data.length : 1;
+    const rowCount = Array.isArray(jsonData.data) ? jsonData.data.length : 1;
 
     db.run(
       `INSERT INTO reports (id, name, source_filename, template_id, pdf_path, file_size_kb, row_count)
